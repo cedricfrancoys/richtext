@@ -1,5 +1,5 @@
 # $.richtext
-A jQuery UI widget rich text editor; fully customisable; supports standard HTML5 browsers; jQuery UI ThemeRoller-ready.
+A jQuery UI widget rich text editor; fully customizable; supports standard HTML5 browsers; jQuery UI ThemeRoller-ready.
 
 Uses standard javascript libraries:
 * jQuery (1.11.3);
@@ -42,10 +42,25 @@ $("#editor").richtext({
 ```
 
 ## Quick presentation
-To keep the code as small and simple as possible, the $.richtext plugin focuses on the interactions with the contentEditable, and provides the functionalities for event listening and user interactions. For all the rest, it relies on jQuery and Rangy javascript libraries. 
+To keep the code as small and simple as possible, this plugin focuses on the HTML style-applying logic, and provides the functionalities for event listening and user interactions. For the rest, it relies on jQuery and Rangy javascript libraries. 
 
-Toolbar can be extended with aditional buttons.
-Each button can be defined separately, like additional pugin.
+The toolbar can be extended with additional buttons.
+Each button can be defined separately, like an additional pugin.
+
+### Custom button example
+```javascript
+$.extend(true, $.fn.richtext.buttons, {
+	'Underline': {
+		icon: 'ui-icon-editor-underline',
+		type: 'style',
+		method: 'css',
+		style: {
+			property: 'text-decoration',
+			value: 'overline'
+		}
+	}
+});
+```
 
 ## Inner logic
 ### Applying style
